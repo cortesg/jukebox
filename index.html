@@ -1,4 +1,4 @@
-<!-- DOES THE FILE HAVE TO BE SMALL? -->
+<!--DOES THE FILE HAVE TO BE SMALL? -->
 
 
 <!DOCTYPE html>
@@ -6,7 +6,13 @@
 <head>
 	<title>Gino's Jukebox</title>
 	<style type="text/css">
-		
+		.center {
+			text-align: center;
+			margin-top: 20%;
+		}
+		*{
+			text-align: center;
+		}
 
 
 	</style>
@@ -14,33 +20,79 @@
 <body>
 
 </body>
-	<script src="jquery-3.1.0.min.js"></script>
+	<h1>TV Show and Movie Songs</h1>
+	
+	<audio src="pokemon.mp3"></audio>
+	<audio src="scrubs.mp3"></audio>
+	<audio src="friends.mp3"></audio>
+	<audio src="avengers.mp3"></audio>
+	<audio src="nba.mp3"></audio>
+
+	<div class="center">
+	<button id="play">Play</button>
+
+    <button id="pause">Pause</button>
+
+    <button id="last">Last</button>
+
+    <button id="skip" type="button">Skip</button>
+    </div>
+
+
+	<script src="jquery.min.js"></script>
     <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 	<script type="text/javascript">
 
 	$(document).ready(function(){
-		//
-
+		
 		function Jukebox(){
-			this.songs = []
-			this.music = music
+			this.song = 3;
+ 			this.songList = ["pokemon.mp3", "scrubs.mp3", "friends.mp3", "avengers.mp3", "nba.mp3"]
 		}
 
 		Jukebox.prototype.play = function(){
-			this.music.play
+     		$("audio")[this.song].play();
 		}
 
-		Jukebox.prototype.stop = function(){
-			this.music.stop
+		Jukebox.prototype.pause = function(){
+			$("audio")[this.song].pause();
 		}
 
 		Jukebox.prototype.addSong = function(){
 			this.songs.push(song)
 		}
 
+		var gino_jukebox = new Jukebox()
+
+		$("#play").click(function(){
+    		gino_jukebox.play();
+ 		});
+
+ 		$("#pause").click(function(){
+    		gino_jukebox.pause();
+ 		});
+
+ 		// $("#pause").click(function(){
+   //  		gino_jukebox.pause();
+ 		// });
+
+
+		// $("#pause").click(function(){
+  //   		myJukebox.pauseSong();
+  // 		});
+
 	})
+
+
+
+
+
 	</script>
 </html>
+
+<!-- var newSong=new Song($("input[name=title]").val(),$("input[name=artist]").val(),$("input[name=url]").val())
+		jb.collection.addSongs(newSong)
+ -->
 
 <!-- 
 Your JavaScript Jukebox must:
@@ -60,3 +112,36 @@ Bonus features:
 Playlist of songs, allows the user to queue up the next song
 
 Feature to request a random song -->
+
+
+
+		<!-- 	// ===================
+		//pauses the song
+		this.pauseSong=function(){
+			console.log("index is " + index)
+			// console.log(this.song.title)
+			this.song.url.pause();	
+		}
+	}
+	// end of Jukebox
+
+	// ===================
+	// Song object
+	function Song(title,artist,url){
+		this.title=title;
+		this.artist=artist;
+		// this.url=url; alternative
+		this.url=new Audio(url);
+	}
+
+	// ===================
+	// Playlist object
+	function Playlist(){
+		this.playlist=[];
+		// adding songs to the playlist
+		this.addSongs=function(){
+			for (var i = 0; i < arguments.length; i++) { 
+				this.playlist.push(arguments[i])		
+			}
+		}
+	}
