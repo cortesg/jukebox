@@ -34,6 +34,17 @@
 	 	button {
 	 		margin-left: 20px;
 	 	}
+	 	.remote {
+	 		width: 50px;
+	 		height:  auto;
+	 		background-color: white;
+	 		border-radius: 100px;
+	 		margin-left: 20px;
+	 	}
+	 	.remote:hover {
+	 		background-color: cyan;
+	 	}
+
 	</style>
 </head>
 <body>
@@ -49,11 +60,14 @@
 	<audio src="audio/nba.mp3"></audio>
 
 	<div class="center">
-		<button id="play">Play</button>
-	    <button id="pause">Pause</button>
+		<img src="images/play.png" id="play" class="remote">
+		<!-- <button id="play">Play</button> -->
+		<img src="images/pause.png" id="pause" class="remote">
+	    <!-- <button id="pause">Pause</button> -->
 		<button id="stop">Stop</button>
 	    <button id="last"><<</button>
 	    <button id="skip" type="button">>></button>
+	    <button id="random" type="button">Random</button>
     </div>
 
 	<script src="jquery.min.js"></script>
@@ -66,23 +80,9 @@
 			this.song = 0;
  			this.list = ["pokemon.mp3", "scrubs.mp3", "friends.mp3", "avengers.mp3", "nba.mp3"]
 		}
+
 		Jukebox.prototype.play = function(){
      		$("audio")[this.song].play();
-
-     		// background
-     		// if(this.song == 0) {
-     		// 	$("#change").html("<img src='images/pokemon.png' id='background'>")
-     		// } else if(this.song == 1) {
-     		// 	$("#change").html("<img src='images/scrubs.jpg' id='background'>")
-     		// } else if(this.song == 2) {
-     		// 	$("#change").html("<img src='images/friends.jpg' id='background'>") 
-     		// } else if(this.song == 3) {
-     		// 	$("#change").html("<img src='images/avengers.jpg' id='background'>")
-     		// } else if(this.song == 4) {
-     		// 	$("#change").html("<img src='images/nba.png' id='background'>")
-     		// }
-     		//background
-
 		}
 
 		Jukebox.prototype.pause = function(){
@@ -141,6 +141,19 @@
 		Jukebox.prototype.random = function(){
 			$("audio")[this.song].currentTime = 0;
 			$("audio")[this.song].pause();
+			this.song = Math.floor((Math.random() * 5));
+			if(this.song == 0) {
+     			$("#change").html("<img src='images/pokemon.png' id='background'>")
+     		} else if(this.song == 1) {
+     			$("#change").html("<img src='images/scrubs.jpg' id='background'>")
+     		} else if(this.song == 2) {
+     			$("#change").html("<img src='images/friends.jpg' id='background'>") 
+     		} else if(this.song == 3) {
+     			$("#change").html("<img src='images/avengers.jpg' id='background'>")
+     		} else if(this.song == 4) {
+     			$("#change").html("<img src='images/nba.png' id='background'>")
+     		}
+			$("audio")[this.song].play();
 		}
 
 		var gino_jukebox = new Jukebox()
@@ -165,15 +178,15 @@
     		gino_jukebox.skip();
  		});
 
+ 		$("#random").click(function(){
+    		gino_jukebox.random();
+ 		});
+
 	})
 
 	</script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </html>
-
-<!-- var newSong=new Song($("input[name=title]").val(),$("input[name=artist]").val(),$("input[name=url]").val())
-		jb.collection.addSongs(newSong)
- -->
 
 <!-- 
 Your JavaScript Jukebox must:
