@@ -5,9 +5,14 @@
 <head>
 	<link rel="shortcut icon" href="images/pokeball.png">
 	<title>Gino's Jukebox</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 	<style type="text/css">
 		.center {
 			text-align: center;
+			margin-right: 22px;
 			margin-top: 20%;
 		}
 		*{
@@ -15,20 +20,26 @@
 			font-family: futura;
 			text-shadow: 1px 1px white;
 		}
-	#background {
-		position: fixed;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		right: 0;
-		z-index: -100;
-	}
+		#background {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			right: 0;
+			z-index: -100;
+		}
+		img {
+	  		image-rendering: crisp-edges;
+	 	}
+	 	button {
+	 		margin-left: 20px;
+	 	}
 	</style>
 </head>
 <body>
 
 </body>
-	<img src="images/pokemon.png" id="background">
+	<div id="change"><img src='images/pokemon.png' id='background'></div>
 	<h1>TV Show and Movie Songs</h1>
 	
 	<audio src="audio/pokemon.mp3"></audio>
@@ -41,8 +52,8 @@
 		<button id="play">Play</button>
 	    <button id="pause">Pause</button>
 		<button id="stop">Stop</button>
-	    <button id="last">Last</button>
-	    <button id="skip" type="button">Skip</button>
+	    <button id="last"><<</button>
+	    <button id="skip" type="button">>></button>
     </div>
 
 	<script src="jquery.min.js"></script>
@@ -55,9 +66,23 @@
 			this.song = 0;
  			this.list = ["pokemon.mp3", "scrubs.mp3", "friends.mp3", "avengers.mp3", "nba.mp3"]
 		}
-
 		Jukebox.prototype.play = function(){
      		$("audio")[this.song].play();
+
+     		// background
+     		// if(this.song == 0) {
+     		// 	$("#change").html("<img src='images/pokemon.png' id='background'>")
+     		// } else if(this.song == 1) {
+     		// 	$("#change").html("<img src='images/scrubs.jpg' id='background'>")
+     		// } else if(this.song == 2) {
+     		// 	$("#change").html("<img src='images/friends.jpg' id='background'>") 
+     		// } else if(this.song == 3) {
+     		// 	$("#change").html("<img src='images/avengers.jpg' id='background'>")
+     		// } else if(this.song == 4) {
+     		// 	$("#change").html("<img src='images/nba.png' id='background'>")
+     		// }
+     		//background
+
 		}
 
 		Jukebox.prototype.pause = function(){
@@ -77,6 +102,15 @@
 				$("audio")[this.song].play();
 			} else {
 				this.song--
+				if(this.song == 1) {
+	     			$("#change").html("<img src='images/scrubs.jpg' id='background'>")
+		     	} else if(this.song == 2) {
+	     			$("#change").html("<img src='images/friends.jpg' id='background'>") 
+	     		} else if(this.song == 3) {
+	     			$("#change").html("<img src='images/avengers.jpg' id='background'>")
+	     		} else if(this.song == 0) {
+	     			$("#change").html("<img src='images/pokemon.png' id='background'>")
+     			}
 				$("audio")[this.song].play();
 			}
 		}
@@ -87,15 +121,26 @@
 			$("audio")[this.song].pause();
 			if(this.song < 4) {
 				this.song++
+				if(this.song == 1) {
+	     			$("#change").html("<img src='images/scrubs.jpg' id='background'>")
+		     	} else if(this.song == 2) {
+	     			$("#change").html("<img src='images/friends.jpg' id='background'>") 
+	     		} else if(this.song == 3) {
+	     			$("#change").html("<img src='images/avengers.jpg' id='background'>")
+	     		} else if(this.song == 4) {
+	     			$("#change").html("<img src='images/nba.png' id='background'>")
+     			}
 				$("audio")[this.song].play();
 			} else if(this.song == 4){
 				this.song = 0
 				$("audio")[this.song].play();
+				$("#change").html("<img src='images/pokemon.png' id='background'>")
 			}
 		}
 
-		Jukebox.prototype.addSong = function(){
-			this.songs.push(song)
+		Jukebox.prototype.random = function(){
+			$("audio")[this.song].currentTime = 0;
+			$("audio")[this.song].pause();
 		}
 
 		var gino_jukebox = new Jukebox()
@@ -123,6 +168,7 @@
 	})
 
 	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </html>
 
 <!-- var newSong=new Song($("input[name=title]").val(),$("input[name=artist]").val(),$("input[name=url]").val())
@@ -147,36 +193,3 @@ Bonus features:
 Playlist of songs, allows the user to queue up the next song
 
 Feature to request a random song -->
-
-
-
-		<!-- 	// ===================
-		//pauses the song
-		this.pauseSong=function(){
-			console.log("index is " + index)
-			// console.log(this.song.title)
-			this.song.url.pause();	
-		}
-	}
-	// end of Jukebox
-
-	// ===================
-	// Song object
-	function Song(title,artist,url){
-		this.title=title;
-		this.artist=artist;
-		// this.url=url; alternative
-		this.url=new Audio(url);
-	}
-
-	// ===================
-	// Playlist object
-	function Playlist(){
-		this.playlist=[];
-		// adding songs to the playlist
-		this.addSongs=function(){
-			for (var i = 0; i < arguments.length; i++) { 
-				this.playlist.push(arguments[i])		
-			}
-		}
-	}
