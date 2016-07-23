@@ -1,72 +1,17 @@
-<!--DOES THE FILE HAVE TO BE SMALL? -->
-<!-- Pokemon theme -->
+<!-- Pokemon theme?  -->
+<!-- playlist and timer -->
 <!DOCTYPE html>
 <html>
 	<head>
+		<!-- tab icon -->
 		<link rel="shortcut icon" href="images/pokeball.png">
 		<title>Gino's Jukebox</title>
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<!-- Optional bootstrap theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-		<style type="text/css">
-			*{
-				text-align: center;
-				font-family: futura;
-				text-shadow: 1px 1px white;
-			}
-			button {
-		 		margin-left: 20px;
-		 	}
-			.center {
-				text-align: center;
-				margin-right: 22px;
-				margin-top: 15%;
-			}
-			.remote {
-		 		width: 50px;
-		 		height:  auto;
-		 		background-color: white;
-		 		border-radius: 100px;
-		 		margin-left: 20px;
-		 	}
-		 	.remote:hover {
-		 		background-color: cyan;
-		 	}
-			#background {
-				/*spans background across page*/
-				position: fixed;
-				width: 100%;
-				height: 100%;
-				top: 0;
-				right: 0;
-				z-index: -100;
-			}
-			#random {
-				margin-bottom: 30px;
-				width: 335px;
-			}
-		 	#rewind {
-		 		/*all of below flips an image*/
-				-moz-transform: scaleX(-1);
-		        -o-transform: scaleX(-1);
-		        -webkit-transform: scaleX(-1);
-		        transform: scaleX(-1);
-		        filter: FlipH;
-		        -ms-filter: "FlipH";
-			}
-		 	#skip {
-		 		-moz-transform: scaleX(-1);
-		        -o-transform: scaleX(-1);
-		        -webkit-transform: scaleX(-1);
-		        transform: scaleX(-1);
-		        filter: FlipH;
-		        -ms-filter: "FlipH";
-		 	}
-			img {
-		  		image-rendering: crisp-edges;
-		 	}
-		</style>
+		<!-- My own stylesheet -->
+		<link rel="stylesheet" href="juked.css">
 	</head>
 	<body>
 		<div id="change"><img src='images/pokemon.png' id='background'></div>
@@ -77,156 +22,42 @@
 		<audio src="audio/friends.mp3"></audio>
 		<audio src="audio/avengers.mp3"></audio>
 		<audio src="audio/nba.mp3"></audio>
+		
+		<div id="playlist-box">
+			<div class="playlist" id="pokemon">1. Pokemon</div>
+			<div class="playlist" id="scrubs">2. Scrubs</div>
+			<div class="playlist" id="friends">3. Friends</div>
+			<div class="playlist" id="avengers">4. Avengers</div>
+			<div class="playlist" id="nba">5. NBA</div>
+		</div>
 
 		<div class="center"> <!-- I had the images as buttons originally -->
-			<button id="random" class="btn btn-warning">Random</button><br>
-			<img src="images/play.png" id="play" class="remote">
+			<button id="random" class="btn btn-warning">Randomize!</button><br>
+			<img src="images/play2.png" id="play" class="remote">
 			<!-- <button id="play">Play</button> -->
 			<img src="images/pause.png" id="pause" class="remote">
 		    <!-- <button id="pause">Pause</button> -->
 		    <img src="images/stop.png" id="stop" class="remote">
 			<!-- <button id="stop">Stop</button> -->
-			<img src="images/play.png" id="rewind" class="remote">
+			<img src="images/play2.png" id="rewind" class="remote">
 			<img src="images/last.png" id="last" class="remote">
 		    <!-- <button id="last"><<</button> -->
 		    <img src="images/last.png" id="skip" class="remote">
 		    <!-- <img src="images/skip.png" id="skip" class="remote"> -->
 		    <!-- <button id="skip" type="button">>></button> -->
 	    </div>
+	    <div id="time">0</div>
 	</body>
 	<script src="jquery.min.js"></script>
     <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
-	<script type="text/javascript">
-
-	$(document).ready(function(){
-		
-		function Jukebox(){
-			this.song = 0; //initialize this.song (explained below)
-		}
-
-		//$("audio") targets audio tags in my html file
-		Jukebox.prototype.play = function(){
-     		$("audio")[this.song].play(); 
-     		//if you press play when you first go on the page, since this.song is initialized to 0, this reads as $("audio")[0]. $("audio")[0] is the first audio tag in the html file, so it will play the first song.
-     		// $("audio")[1] is the second audio tag and so on
-		}
-
-		Jukebox.prototype.pause = function(){
-			$("audio")[this.song].pause();
-		}
-
-		Jukebox.prototype.stop = function(){
-			$("audio")[this.song].currentTime = 0; //(.currentTime = 0) puts the song at the beginning
-			$("audio")[this.song].pause();
-		}
-
-		Jukebox.prototype.rewind = function(){
-			$("audio")[this.song].currentTime = 0;
-		}
-
-		//automatically plays the song before the one being played; plays the first song from the start if it's on the first song
-		Jukebox.prototype.last = function(){
-			$("audio")[this.song].currentTime = 0;
-			$("audio")[this.song].pause();
-			//if it's the first song, go to the last song in the list (the fifth song)
-			if(this.song == 0) {     
-				this.song = 4
-				$("audio")[this.song].play();
-				//anything with $("change") changes the background image, only differences are what's in src
-				$("#change").html("<img src='images/nba.png' id='background'>")
-			} else {
-				//if it's not the first song, make it so that this.song is the song before
-				this.song--
-				if(this.song == 1) {
-	     			$("#change").html("<img src='images/scrubs.jpg' id='background'>")
-		     	} else if(this.song == 2) {
-	     			$("#change").html("<img src='images/friends.jpg' id='background'>") 
-	     		} else if(this.song == 3) {
-	     			$("#change").html("<img src='images/avengers.jpg' id='background'>")
-	     		} else if(this.song == 0) {
-	     			$("#change").html("<img src='images/pokemon.png' id='background'>")
-     			}
-				$("audio")[this.song].play();
-			}
-		}
-
-		//automatically plays the next song, goes back to first song if it's on the last song
-		Jukebox.prototype.skip = function(){
-			$("audio")[this.song].currentTime = 0;
-			$("audio")[this.song].pause();
-			if(this.song < 4) {
-				//if it's not the last song, make it so that this.song is the next song
-				this.song++
-				if(this.song == 1) {
-	     			$("#change").html("<img src='images/scrubs.jpg' id='background'>")
-		     	} else if(this.song == 2) {
-	     			$("#change").html("<img src='images/friends.jpg' id='background'>") 
-	     		} else if(this.song == 3) {
-	     			$("#change").html("<img src='images/avengers.jpg' id='background'>")
-	     		} else if(this.song == 4) {
-	     			$("#change").html("<img src='images/nba.png' id='background'>")
-     			}
-				$("audio")[this.song].play();
-			} else if(this.song == 4){
-				//if it's the last song, go to the first song
-				this.song = 0
-				$("audio")[this.song].play();
-				$("#change").html("<img src='images/pokemon.png' id='background'>")
-			}
-		}
-
-		Jukebox.prototype.random = function(){
-			$("audio")[this.song].currentTime = 0;
-			$("audio")[this.song].pause();
-			this.song = Math.floor((Math.random() * 5)); //index is a random number between 0 and 5, not including 5.
-			if(this.song == 0) {
-     			$("#change").html("<img src='images/pokemon.png' id='background'>")
-     		} else if(this.song == 1) {
-     			$("#change").html("<img src='images/scrubs.jpg' id='background'>")
-     		} else if(this.song == 2) {
-     			$("#change").html("<img src='images/friends.jpg' id='background'>") 
-     		} else if(this.song == 3) {
-     			$("#change").html("<img src='images/avengers.jpg' id='background'>")
-     		} else if(this.song == 4) {
-     			$("#change").html("<img src='images/nba.png' id='background'>")
-     		}
-			$("audio")[this.song].play();
-		}
-
-		//make a new Jukebox object
-		var gino_jukebox = new Jukebox()
-
-		//make the click events happen; 
-		$("#play").click(function(){
-    		gino_jukebox.play(); //.play here is taken from Jukebox.prototype.play above
- 		});
-
- 		$("#pause").click(function(){
-    		gino_jukebox.pause(); //.pause here is taken from Jukebox.prototype.pause above
- 		});
-
- 		$("#stop").click(function(){
-    		gino_jukebox.stop(); //and so on...
- 		});
-
- 		$("#rewind").click(function(){
-    		gino_jukebox.rewind();
- 		});
-
- 		$("#last").click(function(){
-    		gino_jukebox.last();
- 		});
-
- 		$("#skip").click(function(){
-    		gino_jukebox.skip();
- 		});
-
- 		$("#random").click(function(){
-    		gino_jukebox.random();
- 		});
- 		
-	})
-	</script>
+	<script type="text/javascript" src="juked.js"></script>
 	<!-- More bootstrap -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </html>
+
+
+<!-- shake on select FE (before submission?) -->
+<!-- fade in/out background FE (weekend/Mon) -->
+<!-- shorten width of hover on playlist FE (Mon/Tues) -->
+<!-- show progress bar BE (weekend 1st sat) -->
+<!-- randomization BE (weekend 2nd sun)
