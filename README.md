@@ -1,7 +1,8 @@
 # jukebox
-TV Show and Movie Songs
 
-Your JavaScript Jukebox must:
+#TV Show and Movie Songs#
+
+##Your JavaScript Jukebox must:##
 
 * Display at least one song on the page when the page loads
 
@@ -13,7 +14,7 @@ Your JavaScript Jukebox must:
 
 * The whole Jukebox should be backed by an object called Jukebox with methods to play, stop, and load songs.
 
-Bonus features:
+###Bonus features:###
 
 * Playlist of songs, allows the user to queue up the next song
 
