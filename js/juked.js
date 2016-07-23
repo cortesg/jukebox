@@ -144,7 +144,7 @@ $(document).ready(function(){
 		$("#avengers").fadeOut(700).fadeIn(700).fadeOut(700).fadeIn(700);
 	}
 	Jukebox.prototype.change4 = function(){
-		$("#change").html("<img src='images/nba.png' id='background'>")
+		$("#change").html("<img src='images/gifs/nba.gif' id='background'>")
 		$("#nba").fadeOut(700).fadeIn(700).fadeOut(700).fadeIn(700);
 	}
 
