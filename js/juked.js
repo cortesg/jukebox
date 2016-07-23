@@ -16,12 +16,12 @@ $(document).ready(function(){
 	}
 
 	Jukebox.prototype.stop = function(){
-		$("audio")[this.song].currentTime = 0; //(.currentTime = 0) puts the song at the beginning
+		this.rewind(); //calling from below
 		this.pause(); //if a song is playing already, it automatically keeps playing if you dont call pause function here
 	}
 
 	Jukebox.prototype.rewind = function(){
-		$("audio")[this.song].currentTime = 0; 
+		$("audio")[this.song].currentTime = 0; //(.currentTime = 0) puts the song at the beginning
 	}
 
 	//automatically plays the song before the one being played
@@ -31,7 +31,7 @@ $(document).ready(function(){
 		if(this.song == 0) {     
 			this.song = 4
 			//anything with $("change") changes the background image, only differences are what's in src
-			this.change4() //change4 is a function from below
+			this.change4() //change4 is a function from way below
 		} else {
 			this.song--  // "--" subtracts 1 from the index; makes it so that this.song is the song before
 			if(this.song == 1) {
@@ -133,7 +133,7 @@ $(document).ready(function(){
 	}
 	Jukebox.prototype.change1 = function(){
 		$("#change").html("<img src='images/scrubs.jpg' id='background'>")
-		$("#scrubs").fadeOut(700).fadeIn(700).fadeOut(700).fadeIn(700)
+		$("#scrubs").fadeOut(700).fadeIn(700).fadeOut(700).fadeIn(700);
 	}
 	Jukebox.prototype.change2 = function(){
 		$("#change").html("<img src='images/friends.jpg' id='background'>")
