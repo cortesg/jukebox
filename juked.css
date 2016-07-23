@@ -42,6 +42,23 @@ h1 {
 	background-color: #F2F477;
 }
 
+#scrubs:hover {
+	background-color: teal;
+}
+
+#friends:hover {
+	background-color: pink;
+}
+
+
+#avengers:hover {
+	background-color: silver;
+}
+
+#nba:hover {
+	background-color: cyan;
+}
+
 #playlist-box {
 	margin-top: 25px;
 }
