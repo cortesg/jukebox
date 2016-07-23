@@ -1,6 +1,4 @@
-# jukebox
-
-#TV Show and Movie Songs#
+#TV Show and Movie Songs Jukebox#
 
 ##Your JavaScript Jukebox must:##
 
@@ -14,7 +12,7 @@
 
 * The whole Jukebox should be backed by an object called Jukebox with methods to play, stop, and load songs.
 
-###Bonus features:###
+##Bonus features:##
 
 * Playlist of songs, allows the user to queue up the next song
 
