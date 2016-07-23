@@ -1,5 +1,3 @@
-<!-- Pokemon theme?  -->
-<!-- playlist and timer -->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,13 +14,13 @@
 	<body>
 		<div id="change"><img src='images/pokemon.png' id='background'></div>
 		<h1>TV Show and Movie Songs</h1>
-		
+		<!-- audio 'array' -->
 		<audio src="audio/pokemon.mp3"></audio>
 		<audio src="audio/scrubs.mp3"></audio>
 		<audio src="audio/friends.mp3"></audio>
 		<audio src="audio/avengers.mp3"></audio>
 		<audio src="audio/nba.mp3"></audio>
-		
+		<!-- the playlist table -->
 		<div id="playlist-box">
 			<div class="playlist" id="pokemon">1. Pokemon</div>
 			<div class="playlist" id="scrubs">2. Scrubs</div>
@@ -30,23 +28,18 @@
 			<div class="playlist" id="avengers">4. Avengers</div>
 			<div class="playlist" id="nba">5. NBA</div>
 		</div>
-
-		<div class="center"> <!-- I had the images as buttons originally -->
+		<!-- the 'remote' -->
+		<div class="center">
 			<button id="random" class="btn btn-warning">Randomize!</button><br>
 			<img src="images/play2.png" id="play" class="remote">
-			<!-- <button id="play">Play</button> -->
 			<img src="images/pause.png" id="pause" class="remote">
-		    <!-- <button id="pause">Pause</button> -->
 		    <img src="images/stop.png" id="stop" class="remote">
-			<!-- <button id="stop">Stop</button> -->
 			<img src="images/play2.png" id="rewind" class="remote">
 			<img src="images/last.png" id="last" class="remote">
-		    <!-- <button id="last"><<</button> -->
 		    <img src="images/last.png" id="skip" class="remote">
-		    <!-- <img src="images/skip.png" id="skip" class="remote"> -->
-		    <!-- <button id="skip" type="button">>></button> -->
 	    </div>
-	    <div id="time">0</div>
+		<!-- the timer -->
+	    <div id="time"></div>
 	</body>
 	<script src="jquery.min.js"></script>
     <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
@@ -60,4 +53,4 @@
 <!-- fade in/out background FE (weekend/Mon) -->
 <!-- shorten width of hover on playlist FE (Mon/Tues) -->
 <!-- show progress bar BE (weekend 1st sat) -->
-<!-- randomization BE (weekend 2nd sun)
+<!-- randomization/spin BE (weekend 2nd sun)
