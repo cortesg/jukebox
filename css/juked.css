@@ -119,4 +119,5 @@ h1 {
 img {
 	image-rendering: crisp-edges;
 	cursor: pointer;
+	border: 3px solid black;
 }
