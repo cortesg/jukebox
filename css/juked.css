@@ -39,6 +39,7 @@ h1 {
 }
 
 .playlist:hover {
+	cursor: pointer;
 	background-color: #F2F477;
 }
 
@@ -117,4 +118,8 @@ h1 {
 
 img {
 	image-rendering: crisp-edges;
+	cursor: pointer;
 }
+
+
+cursor: url(../images/my-cursor.png), auto;
