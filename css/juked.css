@@ -115,3 +115,7 @@ h1 {
 img {
 	image-rendering: crisp-edges;
 }
+
+#content {
+	display: none;
+}

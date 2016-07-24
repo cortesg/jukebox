@@ -1,5 +1,8 @@
 $(document).ready(function(){
-	
+
+	//loading page
+	$('body').toggleClass('loaded')
+
 	function Jukebox(){
 		this.song = 0; //initialize this.song (explained below)
 	}

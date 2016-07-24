@@ -8,10 +8,20 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-		<!-- My own stylesheet -->
+		<!-- Loading page stylesheet https://ihatetomatoes.net/create-custom-preloading-screen/ --> 
+		<link rel="stylesheet" href="css/main.css">
+		<!-- My stylesheet -->
 		<link rel="stylesheet" href="css/juked.css">
 	</head>
 	<body>
+		<!-- loading page -->
+		<div id="loader-wrapper">
+		    <div id="loader"></div>
+		    <div class="loader-section section-left"></div>
+		    <div class="loader-section section-right"></div>
+		</div>
+		<div id="content"></div>
+		<!-- backgrouund and title -->
 		<div id="change"><img src='images/pokemon.png' id='background'></div>
 		<h1>TV Show and Movie Songs</h1>
 		<!-- audio 'array' -->
@@ -45,10 +55,3 @@
     <script src="js/jquery-ui.min.js"></script>
 	<script src="js/juked.js"></script>
 </html>
-
-
-
-<!-- fade in/out background FE (weekend/Mon) -->
-<!-- shorten width of hover on playlist FE (Mon/Tues) -->
-<!-- show progress bar BE (weekend 1st sat) -->
-<!-- randomization/spin BE (weekend 2nd sun)
