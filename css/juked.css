@@ -120,6 +120,3 @@ img {
 	image-rendering: crisp-edges;
 	cursor: pointer;
 }
-
-
-cursor: url(../images/my-cursor.png), auto;
