@@ -154,14 +154,13 @@ $(document).ready(function(){
 	//make a new Jukebox object
 	var gino_jukebox = new Jukebox()
 
-
-	//below are what makes the click events happen; 
-
 	//this shows current time of the song
 	setInterval(function(){
         $("#time").html((("0" + Math.floor($("audio")[gino_jukebox.song].currentTime / 60)).substr(-2) + ":" + (("0" + Math.floor($("audio")[gino_jukebox.song].currentTime % 60))).substr(-2)));
       	}, 1)
 
+	//below are what makes the click events happen; 
+	
 	$("#play").click(function(){
 		gino_jukebox.play(); //.play here is taken from Jukebox.prototype.play above
 	});
