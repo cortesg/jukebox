@@ -33,7 +33,7 @@ $(document).ready(function(){
 		//if it's the first song, go to the last song in the list (the fifth song)
 		if(this.song == 0) {     
 			this.song = 4
-			//anything with $("change") changes the background image, only differences are what's in src
+			//.change#() are functions from below
 			this.change4() //change4 is a function from way below
 		} else {
 			this.song--  // "--" subtracts 1 from the index; makes it so that this.song is the song before
@@ -130,6 +130,7 @@ $(document).ready(function(){
 	}
 	//above are the playlist functions
 
+	//anything with $("change") changes the background image, only differences are what's in src
 	Jukebox.prototype.change0 = function(){
 		$("#change").html("<img src='images/pokemon.png' id='background'>")
 		$("#pokemon").fadeOut(700).fadeIn(700).fadeOut(700).fadeIn(700);
