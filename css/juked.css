@@ -82,6 +82,13 @@ h1 {
 	width: 335px;
 }
 
+/* depresses button when you click*/
+#random:active {
+  background-color: orange;
+  box-shadow: 0 3px #666;
+  transform: translateY(1px);
+}
+
 #pause{
 	width: 43px;
 	height: auto;
