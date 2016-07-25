@@ -21,6 +21,12 @@ h1 {
 	margin-top: 3%;
 }
 
+.center img {
+	image-rendering: crisp-edges;
+	cursor: pointer;
+	border: 3px solid black;
+}
+
 .remote {
 	width: 50px;
 	height:  auto;
@@ -41,6 +47,14 @@ h1 {
 .playlist:hover {
 	cursor: pointer;
 	background-color: #F2F477;
+}
+
+.responsive_buttons {
+	width: 50px;
+	height: auto;
+	background-color: white;
+	border-radius: 100px;
+	margin-left: 20px;
 }
 
 #background {		
@@ -123,8 +137,26 @@ h1 {
 	margin-top: 30px; 
 }
 
-.center img {
-	image-rendering: crisp-edges;
-	cursor: pointer;
-	border: 3px solid black;
+/* Responsive Design Below*/
+/* For iPhone and other small phones (portrait, not landscape) Moves half of the buttons to a new line and changes title font size to fit on screen */
+
+.responsive_remote {
+	display: none;
+}
+
+@media all and (max-width: 400px) {  
+		h1 {
+			font-size: 24px;
+		} 
+		#playlist-box {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		.responsive_remote {
+			display: block;
+			margin-top: 60px;
+		}
+		.responsive_buttons {
+			margin-top: 20px;
+		}
 }
