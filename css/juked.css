@@ -15,13 +15,13 @@ h1 {
 	text-shadow: 2px 2px black;
 }
 
-.center {
+.buttons {
 	text-align: center;
 	margin-right: 22px;
 	margin-top: 3%;
 }
 
-.center img {
+.buttons img {
 	image-rendering: crisp-edges;
 	cursor: pointer;
 	border: 3px solid black;
