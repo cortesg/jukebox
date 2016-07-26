@@ -23,37 +23,40 @@
 		    <div class="loader-section section-right"></div>
 		</div>
 		<div id="content"></div>
-		<!-- backgrouund and title -->
-		<div id="change"><img src='images/pokemon.png' id='background'></div>
-		<h1>TV Show and Movie Songs</h1>
-		<!-- <h4>Turn your phone for the better view!</h4> -->
-		<!-- audio 'array' -->
-		<audio src="audio/pokemon.mp3"></audio>
-		<audio src="audio/scrubs.mp3"></audio>
-		<audio src="audio/friends.mp3"></audio>
-		<audio src="audio/avengers.mp3"></audio>
-		<audio src="audio/nba.mp3"></audio>
-		<!-- the playlist table -->
-		<div id="playlist-box">
-			<div class="playlist" id="pokemon">1. Pokemon</div>
-			<div class="playlist" id="scrubs">2. Scrubs</div>
-			<div class="playlist" id="friends">3. Friends</div>
-			<div class="playlist" id="avengers">4. Avengers</div>
-			<div class="playlist" id="nba">5. NBA</div>
-		</div>
-		<!-- the 'remote' -->
-		<div class="buttons">
-			<button id="random" class="btn btn-warning">Randomize!</button><br>
-			<img src="images/play2.png" id="play" class="remote">
-			<img src="images/pause.png" id="pause" class="remote">
-		    <img src="images/stop.png" id="stop" class="remote">
-		    <br class="responsive_remote">
-			<img src="images/play2.png" id="rewind" class="responsive_buttons" class="remote" >
-			<img src="images/last.png" id="last" class="responsive_buttons" class="remote">
-			<img src="images/last.png" id="skip" class="responsive_buttons" class="remote">
+		<!-- after loading page begins here -->
+		<div id="container">
+			<!-- title and background image -->
+			<div id="change"><img src='images/pokemon.png' id='background'></div>
+			<h1>TV Show and Movie Songs</h1>
+			<!-- <h4>Turn your phone for the better view!</h4> -->
+			<!-- audio 'array' -->
+			<audio src="audio/pokemon.mp3"></audio>
+			<audio src="audio/scrubs.mp3"></audio>
+			<audio src="audio/friends.mp3"></audio>
+			<audio src="audio/avengers.mp3"></audio>
+			<audio src="audio/nba.mp3"></audio>
+			<!-- the playlist table -->
+			<div id="playlist-box">
+				<div class="playlist" id="pokemon">1. Pokemon</div>
+				<div class="playlist" id="scrubs">2. Scrubs</div>
+				<div class="playlist" id="friends">3. Friends</div>
+				<div class="playlist" id="avengers">4. Avengers</div>
+				<div class="playlist" id="nba">5. NBA</div>
+			</div>
+			<!-- the 'remote' -->
+			<div class="buttons">
+				<button id="random" class="btn btn-warning">Randomize!</button><br>
+				<img src="images/play2.png" id="play" class="remote">
+				<img src="images/pause.png" id="pause" class="remote">
+			    <img src="images/stop.png" id="stop" class="remote">
+			    <br class="responsive_remote">
+				<img src="images/play2.png" id="rewind" class="responsive_buttons" class="remote" >
+				<img src="images/last.png" id="last" class="responsive_buttons" class="remote">
+				<img src="images/last.png" id="skip" class="responsive_buttons" class="remote">
+		    </div>
+			<!-- the timer (stops at end of song) -->
+		    <div id="time"></div>
 	    </div>
-		<!-- the timer (stops at end of song) -->
-	    <div id="time"></div>
 	</body>
 	<script src="js/jquery.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
