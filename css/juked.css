@@ -148,8 +148,62 @@ h4 {
 	display: none;
 }
 
-/*@media all and (max-width: 400px) {  */
-/*		h1 {
+/*@media (min-width: 401px) and (max-width: 780px) {  
+		h1 {
+			font-size: 16px;
+		} 
+		#playlist-box {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		#random {
+			width: 200px;
+			font-size: 10px;
+		}
+		#play {
+
+		}
+		#pause {
+			height: 30px;
+			width: 30px;
+		}
+		.remote {
+			height: 30px;
+			width: 30px;
+		}
+		#stop {
+			height: 30px;
+			width: 30px;
+		}
+		#rewind {
+			height: 30px;
+			width: 30px;
+		}
+		#last {
+			height: 30px;
+			width: 30px;
+		}
+		#skip{
+			height: 30px;
+			width: 30px;
+		}
+		.responsive_remote {
+			display: block;
+			margin-top: 60px;
+		}
+		.responsive_buttons {
+			margin-top: 20px;
+		}
+		.playlist {
+			font-size: 10px;
+		}
+		h4 {
+			display: none;
+		}
+}*/
+
+@media (max-width: 400px) {  
+		h1 {
 			font-size: 24px;
 		} 
 		#playlist-box {
@@ -165,9 +219,15 @@ h4 {
 		}
 		.responsive_buttons {
 			margin-top: 20px;
-		}*/
+		}
 		h4 {
 			text-align: center;
 			display: block;
 		}
-/*}*/
+		.remote img {
+			height: 100px;
+			width: 100px;
+		}
+}
+
+
