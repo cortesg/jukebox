@@ -148,44 +148,14 @@ h4 {
 	display: none;
 }
 
-/*@media (min-width: 401px) and (max-width: 780px) {  
-		h1 {
-			font-size: 16px;
-		} 
-		#playlist-box {
+@media (min-width: 401px) and (max-width: 770px) {  
+/*		#playlist-box {
 			margin-top: 20px;
 			margin-bottom: 20px;
 		}
 		#random {
 			width: 200px;
 			font-size: 10px;
-		}
-		#play {
-
-		}
-		#pause {
-			height: 30px;
-			width: 30px;
-		}
-		.remote {
-			height: 30px;
-			width: 30px;
-		}
-		#stop {
-			height: 30px;
-			width: 30px;
-		}
-		#rewind {
-			height: 30px;
-			width: 30px;
-		}
-		#last {
-			height: 30px;
-			width: 30px;
-		}
-		#skip{
-			height: 30px;
-			width: 30px;
 		}
 		.responsive_remote {
 			display: block;
@@ -194,13 +164,13 @@ h4 {
 		.responsive_buttons {
 			margin-top: 20px;
 		}
-		.playlist {
-			font-size: 10px;
-		}
 		h4 {
 			display: none;
+		}*/
+		#ipad {
+			margin-top: 10%;
 		}
-}*/
+}
 
 @media (max-width: 400px) {  
 		#container {
@@ -212,6 +182,9 @@ h4 {
 		#playlist-box {
 			margin-top: 20px;
 			margin-bottom: 20px;
+		}
+		.playlist {
+			font-size: 16px;
 		}
 		#random {
 			width: 250px;
