@@ -10,7 +10,7 @@ button {
 }
 
 h1 {
-	font-size: 44px;
+	font-size: 4vw; /*44px*/
 	color: #F2F477;
 	text-shadow: 2px 2px black;
 }
@@ -148,11 +148,11 @@ h4 {
 	display: none;
 }
 
-@media (min-width: 401px) and (max-width: 770px) {  
+/*@media (min-width: 401px) and (max-width: 770px) {  
 	#ipad {
 		margin-top: 100px;
 	}
-}
+}*/
 
 @media (max-width: 400px) {  
 	h1 {
