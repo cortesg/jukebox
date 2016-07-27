@@ -96,35 +96,35 @@ $(document).ready(function(){
 	Jukebox.prototype.play0 = function(){
 		this.stop()
 		this.song = 0
-		$("#pokemon").effect( "shake", {times:3, distance:3, direction:"down"},300)
+		$("#pokemon").effect( "shake", {times:3, distance:3, direction:"down"},700)
 		this.change0()		
 		this.play(); 
 	}
 	Jukebox.prototype.play1 = function(){
 		this.stop()
 		this.song = 1
-		$("#scrubs").effect( "shake", {times:3, distance:3, direction:"down"},300)
+		$("#scrubs").effect( "shake", {times:3, distance:3, direction:"down"},700)
 		this.change1()
 		this.play(); 
 	}
 	Jukebox.prototype.play2 = function(){
 		this.stop()
 		this.song = 2
-		$("#friends").effect( "shake", {times:3, distance:3, direction:"down"},300)
+		$("#friends").effect( "shake", {times:3, distance:3, direction:"down"},700)
 		this.change2()
 		this.play(); 
 	}
 	Jukebox.prototype.play3 = function(){
 		this.stop()
 		this.song = 3
-		$("#avengers").effect( "shake", {times:3, distance:3, direction:"down"},300)
+		$("#avengers").effect( "shake", {times:3, distance:3, direction:"down"},700)
 		this.change3()
 		this.play(); 
 	}
 	Jukebox.prototype.play4 = function(){
 		this.stop()
 		this.song = 4
-		$("#nba").effect( "shake", {times:3, distance:3, direction:"down"},300)
+		$("#nba").effect( "shake", {times:3, distance:3, direction:"down"},700)
 		this.change4()
 		this.play(); 
 	}
@@ -133,23 +133,23 @@ $(document).ready(function(){
 	//anything with $("change") changes the background image, only differences are what's in src
 	Jukebox.prototype.change0 = function(){
 		$("#change").html("<img src='images/pokemon.png' id='background'>")
-		$("#pokemon").fadeOut(700).fadeIn(700).fadeOut(700).fadeIn(700);
+		$("#pokemon").fadeOut(700).fadeIn(700)
 	}
 	Jukebox.prototype.change1 = function(){
 		$("#change").html("<img src='images/scrubs.jpg' id='background'>")
-		$("#scrubs").fadeOut(700).fadeIn(700).fadeOut(700).fadeIn(700);
+		$("#scrubs").fadeOut(700).fadeIn(700)
 	}
 	Jukebox.prototype.change2 = function(){
 		$("#change").html("<img src='images/friends.jpg' id='background'>")
-		$("#friends").fadeOut(700).fadeIn(700).fadeOut(700).fadeIn(700);
+		$("#friends").fadeOut(700).fadeIn(700)
 	}
 	Jukebox.prototype.change3 = function(){
 		$("#change").html("<img src='images/avengers.jpg' id='background'>")
-		$("#avengers").fadeOut(700).fadeIn(700).fadeOut(700).fadeIn(700);
+		$("#avengers").fadeOut(700).fadeIn(700)
 	}
 	Jukebox.prototype.change4 = function(){
 		$("#change").html("<img src='images/gifs/nba.gif' id='background'>")
-		$("#nba").fadeOut(700).fadeIn(700).fadeOut(700).fadeIn(700);
+		$("#nba").fadeOut(700).fadeIn(700)
 	}
 
 	//make a new Jukebox object

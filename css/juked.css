@@ -15,6 +15,10 @@ h1 {
 	text-shadow: 2px 2px black;
 }
 
+h4 {
+	display: none;
+}
+
 .buttons {
 	text-align: center;
 	margin-right: 22px;
@@ -144,19 +148,41 @@ h1 {
 	display: none;
 }
 
-@media all and (max-width: 400px) {  
-		h1 {
-			font-size: 24px;
-		} 
-		#playlist-box {
-			margin-top: 20px;
-			margin-bottom: 20px;
-		}
-		.responsive_remote {
-			display: block;
-			margin-top: 60px;
-		}
-		.responsive_buttons {
-			margin-top: 20px;
-		}
+@media (min-width: 401px) and (max-width: 770px) {  
+	#ipad {
+		margin-top: 100px;
+	}
 }
+
+@media (max-width: 400px) {  
+	h1 {
+		font-size: 24px;
+	} 
+	#playlist-box {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.playlist {
+		font-size: 16px;
+	}
+	#random {
+		width: 250px;
+	}
+	.responsive_remote {
+		display: block;
+		margin-top: 60px;
+	}
+	.responsive_buttons {
+		margin-top: 20px;
+	}
+	h4 {
+		text-align: center;
+		display: block;
+	}
+	.remote img {
+		height: 100px;
+		width: 100px;
+	}
+}
+
+
